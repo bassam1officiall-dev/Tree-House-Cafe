@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer circle with refined hairline stroke -->
+  <circle cx="50" cy="50" r="46" stroke="#D49B4B" stroke-width="2.5" />
+  <circle cx="50" cy="50" r="41" stroke="#184E37" stroke-width="1" stroke-dasharray="2 3" />
+  
+  <!-- Tree trunk and botanical branches -->
+  <path d="M48 82 L48 54 C48 48 42 42 36 38" stroke="#D49B4B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 82 L52 54 C52 48 58 42 64 38" stroke="#D49B4B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 54 L50 40" stroke="#D49B4B" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Architectural Tree House Structure nestled in branches -->
+  <!-- Platform -->
+  <line x1="30" y1="46" x2="70" y2="46" stroke="#D49B4B" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="34" y1="49" x2="66" y2="49" stroke="#184E37" stroke-width="1.5" />
+  
+  <!-- House Walls -->
+  <rect x="35" y="28" width="30" height="18" rx="1" fill="#0D261C" stroke="#D49B4B" stroke-width="1.8" />
+  
+  <!-- Classic Window panes (reminiscent of the cafe's white grid windows) -->
+  <rect x="39" y="32" width="9" height="10" stroke="#D49B4B" stroke-width="1.2" fill="#184E37" />
+  <line x1="43.5" y1="32" x2="43.5" y2="42" stroke="#D49B4B" stroke-width="0.8" />
+  <line x1="39" y1="37" x2="48" y2="37" stroke="#D49B4B" stroke-width="0.8" />
+  
+  <rect x="52" y="32" width="9" height="10" stroke="#D49B4B" stroke-width="1.2" fill="#184E37" />
+  <line x1="56.5" y1="32" x2="56.5" y2="42" stroke="#D49B4B" stroke-width="0.8" />
+  <line x1="52" y1="37" x2="61" y2="37" stroke="#D49B4B" stroke-width="0.8" />
+  
+  <!-- Roof -->
+  <polygon points="50,16 28,29 72,29" fill="#184E37" stroke="#D49B4B" stroke-width="2" stroke-linejoin="round" />
+  
+  <!-- Subtle warm glowing cup or star at roof peak -->
+  <circle cx="50" cy="15" r="2" fill="#D49B4B" />
+  
+  <!-- Botanical leaves around perimeter -->
+  <path d="M22 36 C24 30, 28 32, 28 32 C28 32, 27 38, 22 36 Z" fill="#D49B4B" opacity="0.85"/>
+  <path d="M78 36 C76 30, 72 32, 72 32 C72 32, 73 38, 78 36 Z" fill="#D49B4B" opacity="0.85"/>
+  <path d="M25 58 C22 53, 26 49, 26 49 C26 49, 29 55, 25 58 Z" fill="#D49B4B" opacity="0.85"/>
+  <path d="M75 58 C78 53, 74 49, 74 49 C74 49, 71 55, 75 58 Z" fill="#D49B4B" opacity="0.85"/>
+  
+  <!-- Ladder/Access lines -->
+  <line x1="48" y1="50" x2="48" y2="68" stroke="#D49B4B" stroke-width="1.2" />
+  <line x1="52" y1="50" x2="52" y2="68" stroke="#D49B4B" stroke-width="1.2" />
+  <line x1="48" y1="54" x2="52" y2="54" stroke="#D49B4B" stroke-width="1.2" />
+  <line x1="48" y1="59" x2="52" y2="59" stroke="#D49B4B" stroke-width="1.2" />
+  <line x1="48" y1="64" x2="52" y2="64" stroke="#D49B4B" stroke-width="1.2" />
+</svg>

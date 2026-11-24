@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-parchment: #F4EFE6;
+  --color-forest: #0D261C;
+  --color-forest-medium: #184E37;
+  --color-amber-glow: #D49B4B;
+  --color-amber-deep: #855414;
+  --color-espresso: #1A1714;
+}
+
+/* Base styles */
+html {
+  background-color: var(--color-parchment);
+  color: var(--color-espresso);
+  font-family: 'IBM Plex Sans Arabic', 'Cairo', system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Headings font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* Latin brand typography */
+.font-brand-latin {
+  font-family: 'Fraunces', serif;
+  letter-spacing: -0.02em;
+}
+
+/* Corrugated Architectural Cladding subtle texture */
+.bg-cladding-pattern {
+  background-color: #0D261C;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+.bg-cladding-subtle {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(13, 38, 28, 0.03) 0px,
+    rgba(13, 38, 28, 0.03) 12px,
+    transparent 12px,
+    transparent 24px
+  );
+}
+
+/* Warm subtle amber glow for lights - realistic, not neon */
+.amber-glow-soft {
+  box-shadow: 0 0 24px -4px rgba(212, 155, 75, 0.28);
+}
+
+.amber-lamp-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(212, 155, 75, 0.18) 0%, transparent 70%);
+}
+
+/* Smooth horizontal scrollbar hiding for menu category tabs on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom delicate scrollbar for drawers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #EAE3D5;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #B87B28;
+  border-radius: 9999px;
+}
+
+/* Interactive focus states */
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid #D49B4B;
+  outline-offset: 2px;
+}
