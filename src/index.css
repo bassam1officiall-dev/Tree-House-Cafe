@@ -38,35 +38,65 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Corrugated Architectural Cladding subtle texture */
+/* Authentic 3D Illuminated Letter Sign Style (from the real photo) */
+.sign-3d-glow {
+  color: #FFF8EB;
+  text-shadow: 
+    0 1px 0 #D49B4B,
+    0 2px 0 #B87B28,
+    0 3px 0 #9A6319,
+    0 4px 0 #78480C,
+    0 5px 6px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(212, 155, 75, 0.75),
+    0 0 50px rgba(212, 155, 75, 0.4);
+}
+
+.sign-3d-subtle {
+  color: #FFF8EB;
+  text-shadow: 
+    0 1px 0 #D49B4B,
+    0 2px 0 #9A6319,
+    0 0 15px rgba(212, 155, 75, 0.6);
+}
+
+/* Corrugated Architectural Cladding texture replicating cafe facade */
 .bg-cladding-pattern {
   background-color: #0D261C;
   background-image: repeating-linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.02) 0px,
-    rgba(255, 255, 255, 0.02) 8px,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 8px,
     transparent 8px,
     transparent 16px
   );
 }
 
-.bg-cladding-subtle {
+.bg-cladding-vertical {
+  background-color: #0D261C;
   background-image: repeating-linear-gradient(
     90deg,
-    rgba(13, 38, 28, 0.03) 0px,
-    rgba(13, 38, 28, 0.03) 12px,
-    transparent 12px,
-    transparent 24px
+    rgba(0, 0, 0, 0.28) 0px,
+    rgba(0, 0, 0, 0.28) 4px,
+    rgba(24, 78, 55, 0.3) 4px,
+    rgba(24, 78, 55, 0.3) 14px,
+    rgba(255, 255, 255, 0.04) 14px,
+    rgba(255, 255, 255, 0.04) 16px,
+    transparent 16px,
+    transparent 20px
   );
 }
 
-/* Warm subtle amber glow for lights - realistic, not neon */
+/* Warm subtle amber glow for architectural soffit downlights */
 .amber-glow-soft {
-  box-shadow: 0 0 24px -4px rgba(212, 155, 75, 0.28);
+  box-shadow: 0 0 24px -4px rgba(212, 155, 75, 0.35);
 }
 
 .amber-lamp-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(212, 155, 75, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(212, 155, 75, 0.25) 0%, rgba(212, 155, 75, 0.06) 45%, transparent 75%);
+}
+
+.amber-spotlight {
+  background: radial-gradient(circle at 50% 50%, rgba(212, 155, 75, 0.2) 0%, transparent 60%);
 }
 
 /* Smooth horizontal scrollbar hiding for menu category tabs on mobile */
@@ -89,6 +119,52 @@ h1, h2, h3, h4, h5, h6 {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #B87B28;
   border-radius: 9999px;
+}
+
+/* Interactive card hover lift animation */
+.interactive-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.interactive-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Button click tactile feel */
+.btn-press {
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Shimmer overlay effect */
+.shimmer-container {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(212, 155, 75, 0.15) 20%,
+    rgba(255, 255, 255, 0.25) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 3.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* Interactive focus states */
