@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface TreeHouseLogoProps {
   className?: string;
   size?: number;
   lightMode?: boolean;
+  usePhoto?: boolean;
 }
 
 export const TreeHouseLogo: React.FC<TreeHouseLogoProps> = ({
-  className = 'w-10 h-10',
-  size = 44,
+  className = 'w-11 h-11',
+  size = 46,
   lightMode = false,
+  usePhoto = true,
 }) => {
+  const [imageError, setImageError] = useState(false);
+
+  // If photo mode is enabled and loaded cleanly, render the authentic real storefront logo
+  if (usePhoto && !imageError) {
+    return (
+      <div
+        style={{ width: size, height: size }}
+        className={`relative rounded-full overflow-hidden border-2 border-[#D49B4B] shadow-glow-amber bg-[#0D261C] shrink-0 ${className}`}
+      >
+        <img
+          src="/images/tree-house-logo.png"
+          alt="Tree House Cafe Official Logo"
+          className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-110"
+          onError={() => setImageError(true)}
+          loading="eager"
+        />
+        {/* Subtle amber rim shine */}
+        <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-[#D49B4B]/40 pointer-events-none" />
+      </div>
+    );
+  }
+
+  // Fallback architectural botanical SVG
   const primaryStroke = lightMode ? '#D49B4B' : '#D49B4B';
   const secondaryStroke = lightMode ? '#184E37' : '#256B4E';
   const fillDark = lightMode ? '#0D261C' : '#071610';
@@ -87,7 +112,7 @@ export const TreeHouseLogo: React.FC<TreeHouseLogoProps> = ({
         strokeWidth="1.8"
       />
 
-      {/* Classic Architectural Grid Windows (Left & Right) */}
+      {/* Classic Architectural Grid Windows */}
       <rect
         x="38"
         y="31"
