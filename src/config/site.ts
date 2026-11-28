@@ -25,10 +25,10 @@ export const siteConfig = {
       url: 'https://www.instagram.com/tree_house_caffe/',
     },
     whatsapp: {
-      number: '201090000000', // Unconfirmed placeholder, order drawer flow preserved
-      display: '010 9000 0000',
+      number: '201122529316',
+      display: '011 2252 9316',
       getLink: (text?: string) => {
-        const baseUrl = 'https://wa.me/201090000000';
+        const baseUrl = 'https://wa.me/201122529316';
         return text ? `${baseUrl}?text=${encodeURIComponent(text)}` : baseUrl;
       },
     },

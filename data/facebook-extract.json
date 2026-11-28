@@ -9,8 +9,8 @@
     "lng": null,
     "googleMapsUrl": "https://maps.google.com/?q=Tree+House+Cafe+البدرشين"
   },
-  "phone": null,
-  "whatsapp": null,
+  "phone": "01122529316",
+  "whatsapp": "01122529316",
   "email": null,
   "website": null,
   "openingHours": null,
@@ -49,8 +49,8 @@
     }
   ],
   "notes": {
-    "phone": "missing, ask owner",
-    "whatsapp": "missing, ask owner",
+    "phone": "01122529316 (confirmed by owner)",
+    "whatsapp": "01122529316 (confirmed by owner)",
     "email": "missing, ask owner",
     "website": "missing, ask owner",
     "openingHours": "missing, ask owner (previously defaulted to 8:00 AM - 2:00 AM)",

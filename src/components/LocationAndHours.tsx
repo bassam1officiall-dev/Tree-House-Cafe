@@ -1,6 +1,6 @@
 import React from 'react';
 import { siteConfig } from '../config/site';
-import { MapPin, Clock, MessageCircle, Navigation } from 'lucide-react';
+import { MapPin, Clock, MessageCircle, Navigation, Phone } from 'lucide-react';
 
 export const LocationAndHours: React.FC = () => {
   return (
@@ -26,6 +26,19 @@ export const LocationAndHours: React.FC = () => {
               <div className="text-xs sm:text-sm text-[#D49B4B]">
                 {siteConfig.hours.ar}
               </div>
+            </div>
+
+            <div className="flex items-center gap-2.5 pt-3 border-t border-[#1C4031]">
+              <Phone className="w-5 h-5 text-[#D49B4B] shrink-0" />
+              <a
+                href={siteConfig.socials.whatsapp.getLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs sm:text-sm text-[#F4EFE6] hover:text-[#D49B4B] font-mono transition-colors"
+                dir="ltr"
+              >
+                {siteConfig.socials.whatsapp.display}
+              </a>
             </div>
 
             <div className="pt-3 border-t border-[#1C4031] flex items-center gap-2">
