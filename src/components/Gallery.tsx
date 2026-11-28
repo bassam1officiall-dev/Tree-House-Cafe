@@ -133,9 +133,9 @@ export const Gallery: React.FC = () => {
           {/* Photo 1: Wide exterior view - spans 7 columns on desktop */}
           <div
             onClick={() => setActiveIdx(0)}
-            className="col-span-2 md:col-span-7 rounded-xl overflow-hidden shadow-sm group bg-[#0D261C] border border-[#E2DACD] cursor-pointer h-48 sm:h-64 md:h-80 relative"
+            className="col-span-2 md:col-span-7 rounded-xl overflow-hidden shadow-sm group border border-[#E2DACD] cursor-pointer h-48 sm:h-64 md:h-80 relative"
           >
-            <picture>
+            <picture className="w-full h-full block">
               <source srcSet="/images/gallery/gallery-1.webp" type="image/webp" />
               <img
                 src={GALLERY[0].src}
@@ -144,18 +144,18 @@ export const Gallery: React.FC = () => {
                 height={GALLERY[0].h}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02] block"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/30 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/20 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Photo 2: Close-up 3D Letters - spans 5 columns on desktop */}
           <div
             onClick={() => setActiveIdx(1)}
-            className="col-span-2 md:col-span-5 rounded-xl overflow-hidden shadow-sm group bg-[#0D261C] border border-[#E2DACD] cursor-pointer h-48 sm:h-64 md:h-80 relative"
+            className="col-span-2 md:col-span-5 rounded-xl overflow-hidden shadow-sm group border border-[#E2DACD] cursor-pointer h-48 sm:h-64 md:h-80 relative"
           >
-            <picture>
+            <picture className="w-full h-full block">
               <source srcSet="/images/gallery/gallery-2.webp" type="image/webp" />
               <img
                 src={GALLERY[1].src}
@@ -164,18 +164,18 @@ export const Gallery: React.FC = () => {
                 height={GALLERY[1].h}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02] block"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/30 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/20 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Photo 3: Entrance & Round Sign - spans 1 col on mobile, 6 cols on desktop */}
           <div
             onClick={() => setActiveIdx(2)}
-            className="col-span-1 md:col-span-6 rounded-xl overflow-hidden shadow-sm group bg-[#0D261C] border border-[#E2DACD] cursor-pointer h-40 sm:h-52 md:h-60 relative"
+            className="col-span-1 md:col-span-6 rounded-xl overflow-hidden shadow-sm group border border-[#E2DACD] cursor-pointer h-40 sm:h-52 md:h-60 relative"
           >
-            <picture>
+            <picture className="w-full h-full block">
               <source srcSet="/images/gallery/gallery-3.webp" type="image/webp" />
               <img
                 src={GALLERY[2].src}
@@ -184,18 +184,18 @@ export const Gallery: React.FC = () => {
                 height={GALLERY[2].h}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02] block"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/30 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/20 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Photo 4: Restaurant Windows & Warm Arch - spans 1 col on mobile, 6 cols on desktop */}
           <div
             onClick={() => setActiveIdx(3)}
-            className="col-span-1 md:col-span-6 rounded-xl overflow-hidden shadow-sm group bg-[#0D261C] border border-[#E2DACD] cursor-pointer h-40 sm:h-52 md:h-60 relative"
+            className="col-span-1 md:col-span-6 rounded-xl overflow-hidden shadow-sm group border border-[#E2DACD] cursor-pointer h-40 sm:h-52 md:h-60 relative"
           >
-            <picture>
+            <picture className="w-full h-full block">
               <source srcSet="/images/gallery/gallery-4.webp" type="image/webp" />
               <img
                 src={GALLERY[3].src}
@@ -204,10 +204,10 @@ export const Gallery: React.FC = () => {
                 height={GALLERY[3].h}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02] block"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/30 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D261C]/20 via-transparent to-transparent pointer-events-none" />
           </div>
 
         </div>

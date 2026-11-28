@@ -50,9 +50,9 @@ export const Img: React.FC<ImgProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden ${aspectRatio ? aspectRatio : ''} ${containerClassName}`}
+      className={`relative overflow-hidden w-full h-full ${aspectRatio ? aspectRatio : ''} ${containerClassName}`}
     >
-      <picture>
+      <picture className="w-full h-full block">
         {webpSrc && !hasError && (
           <source srcSet={webpSrc} type="image/webp" />
         )}
@@ -65,7 +65,7 @@ export const Img: React.FC<ImgProps> = ({
           decoding="async"
           onLoad={() => setIsLoaded(true)}
           onError={handleError}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
+          className={`w-full h-full object-cover transition-opacity duration-300 block ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           } ${className}`}
           {...props}
@@ -73,7 +73,7 @@ export const Img: React.FC<ImgProps> = ({
       </picture>
 
       {/* Subtle warm overlay to keep botanical cafe ambiance consistent */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0D261C]/25 via-transparent to-transparent opacity-80" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0D261C]/20 via-transparent to-transparent opacity-60" />
     </div>
   );
 };

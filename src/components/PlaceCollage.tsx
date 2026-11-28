@@ -15,31 +15,27 @@ export const PlaceCollage: React.FC = () => {
           </span>
         </div>
 
-        {/* Real photo showcase: Wide exterior & Close-up 3D Sign */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+        {/* Real photo showcase: Full-bleed images with NO empty space */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4">
           
-          {/* Real wide night exterior photo */}
-          <div className="md:col-span-8 rounded-xl overflow-hidden shadow-sm group bg-[#0D261C] border border-[#E2DACD]">
-            <div className="h-64 sm:h-80 md:h-96 w-full overflow-hidden">
-              <Img
-                src="/images/fb/cover.jpg"
-                alt="واجهة كافيه تري هاوس الليلية ومدخل المكان في البدرشين"
-                fallbackSrc="/images/tree-house-facade.jpg"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-            </div>
+          {/* Real wide night exterior photo - fills 100% */}
+          <div className="md:col-span-8 rounded-xl overflow-hidden shadow-sm group border border-[#E2DACD] h-56 sm:h-72 md:h-84 relative">
+            <Img
+              src="/images/fb/cover.jpg"
+              alt="واجهة كافيه تري هاوس الليلية ومدخل المكان في البدرشين"
+              fallbackSrc="/images/tree-house-facade.jpg"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
           </div>
 
-          {/* Real illuminated 3D facade sign */}
-          <div className="md:col-span-4 rounded-xl overflow-hidden shadow-sm group bg-[#0D261C] border border-[#E2DACD]">
-            <div className="h-64 sm:h-80 md:h-96 w-full overflow-hidden">
-              <Img
-                src="/images/fb/exterior-night.jpg"
-                alt="حروف Tree House المضيئة ثلاثية الأبعاد على الواجهة"
-                fallbackSrc="/images/tree-house-facade.jpg"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-            </div>
+          {/* Real illuminated 3D facade sign - fills 100% */}
+          <div className="md:col-span-4 rounded-xl overflow-hidden shadow-sm group border border-[#E2DACD] h-56 sm:h-72 md:h-84 relative">
+            <Img
+              src="/images/fb/exterior-night.jpg"
+              alt="حروف Tree House المضيئة ثلاثية الأبعاد على الواجهة"
+              fallbackSrc="/images/tree-house-facade.jpg"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
           </div>
 
         </div>
