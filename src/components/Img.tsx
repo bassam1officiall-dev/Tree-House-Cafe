@@ -6,8 +6,8 @@ export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   priority?: boolean;
   aspectRatio?: string;
   containerClassName?: string;
-  showDevLabel?: boolean;
   fallbackSrc?: string;
+  hideOnError?: boolean;
 }
 
 export const Img: React.FC<ImgProps> = ({
@@ -17,8 +17,8 @@ export const Img: React.FC<ImgProps> = ({
   aspectRatio,
   containerClassName = '',
   className = '',
-  showDevLabel = false,
-  fallbackSrc = '/images/tree-house-facade.jpg',
+  fallbackSrc,
+  hideOnError = true,
   width,
   height,
   ...props
@@ -32,14 +32,21 @@ export const Img: React.FC<ImgProps> = ({
     ? currentSrc.replace(/\.(jpe?g|png)$/i, '.webp')
     : undefined;
 
-  const fileName = src.split('/').pop() || src;
-
   const handleError = () => {
-    if (!hasError && currentSrc !== fallbackSrc) {
+    if (!hasError && fallbackSrc && currentSrc !== fallbackSrc) {
       setHasError(true);
       setCurrentSrc(fallbackSrc);
+    } else {
+      setHasError(true);
     }
   };
+
+  // In production, if an image fails to load and has no working fallback, render nothing
+  if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {
+    if (hideOnError) {
+      return null;
+    }
+  }
 
   return (
     <div
@@ -58,7 +65,7 @@ export const Img: React.FC<ImgProps> = ({
           decoding="async"
           onLoad={() => setIsLoaded(true)}
           onError={handleError}
-          className={`w-full h-full object-cover transition-all duration-300 ${
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           } ${className}`}
           {...props}
@@ -67,13 +74,6 @@ export const Img: React.FC<ImgProps> = ({
 
       {/* Subtle warm overlay to keep botanical cafe ambiance consistent */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0D261C]/25 via-transparent to-transparent opacity-80" />
-
-      {/* Dev-only slot label to guide real photo replacements */}
-      {import.meta.env.DEV && showDevLabel && (
-        <span className="absolute bottom-2 right-2 z-10 px-1.5 py-0.5 text-[10px] font-mono bg-[#0D261C]/85 text-[#D49B4B] rounded border border-[#1C4031] pointer-events-none tracking-tight">
-          {fileName}
-        </span>
-      )}
     </div>
   );
 };
