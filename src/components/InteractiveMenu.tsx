@@ -19,18 +19,6 @@ interface InteractiveMenuProps {
   searchInputRef?: React.RefObject<HTMLInputElement>;
 }
 
-const CATEGORY_COVERS: Record<string, string> = {
-  'coffee': '/images/coffee.jpg',
-  'hot-beverages': '/images/hot-beverages.jpg',
-  'iced-coffee': '/images/iced-coffee.jpg',
-  'frappe': '/images/frappe.jpg',
-  'milkshakes': '/images/milkshake.jpg',
-  'fresh-juice': '/images/juice.jpg',
-  'soft-drinks': '/images/soft-drinks.jpg',
-  'desserts': '/images/desserts.jpg',
-  'water': '/images/water.jpg',
-};
-
 export const InteractiveMenu: React.FC<InteractiveMenuProps> = ({ searchInputRef }) => {
   const [activeCategory, setActiveCategory] = useState<CategoryId | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -40,10 +28,6 @@ export const InteractiveMenu: React.FC<InteractiveMenuProps> = ({ searchInputRef
   const { addItem, totalItemsCount, setIsDrawerOpen } = useOrder();
   const tabsContainerRef = useRef<HTMLDivElement>(null);
 
-  // Top 8 signature popular items with images
-  const signatureItems = useMemo(() => {
-    return MENU_ITEMS.filter((item) => Boolean(item.image));
-  }, []);
 
   const filteredItems = useMemo(() => {
     return MENU_ITEMS.filter((item) => {
@@ -187,68 +171,7 @@ export const InteractiveMenu: React.FC<InteractiveMenuProps> = ({ searchInputRef
           </div>
         </div>
 
-        {/* الأكثر طلباً (Horizontal Scroll Signature Row) */}
-        {signatureItems.length > 0 && searchQuery === '' && activeCategory === 'all' && (
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="text-sm sm:text-base font-bold text-[#0D261C]">
-                الأكثر طلباً
-              </h3>
-              <span className="text-[11px] text-[#855414]">اختيارات الزوار</span>
-            </div>
-
-            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
-              {signatureItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="shrink-0 w-44 sm:w-48 bg-[#FCFAF7] border border-[#E2DACD] hover:border-[#184E37] rounded-xl overflow-hidden transition-all text-right shadow-sm group"
-                >
-                  <div className="h-28 sm:h-32 w-full overflow-hidden relative">
-                    <Img
-                      src={item.image!}
-                      alt={item.nameAr}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
-                      showDevLabel={true}
-                    />
-                  </div>
-
-                  <div className="p-2.5">
-                    <div className="font-bold text-xs sm:text-sm text-[#0D261C] truncate mb-0.5">
-                      {item.nameAr}
-                    </div>
-                    <div className="font-brand-latin text-[11px] text-[#855414] truncate mb-2">
-                      {item.nameEn}
-                    </div>
-
-                    <div className="flex items-center justify-between pt-1 border-t border-[#EAE3D5]">
-                      <span className="text-xs font-bold text-[#0D261C] font-mono">
-                        {item.price !== null ? `${item.price} ج.م` : 'السعر بالكافيه'}
-                      </span>
-
-                      <button
-                        onClick={() => handleAddItem(item)}
-                        className={`p-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                          addedItemIds[item.id]
-                            ? 'bg-[#184E37] text-[#F4EFE6]'
-                            : 'bg-[#0D261C] text-[#F4EFE6] hover:bg-[#184E37]'
-                        }`}
-                        aria-label={`إضافة ${item.nameAr}`}
-                      >
-                        {addedItemIds[item.id] ? (
-                          <Check className="w-3.5 h-3.5 text-[#D49B4B]" />
-                        ) : (
-                          <Plus className="w-3.5 h-3.5" />
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Sticky Horizontal Category Tabs with Thumbnails */}
+        {/* Sticky Horizontal Category Tabs (Clean & Human) */}
         <div className="sticky top-[60px] sm:top-[68px] z-30 bg-[#F4EFE6]/95 backdrop-blur-md py-2.5 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-[#E2DACD] mb-5">
           <div
             ref={tabsContainerRef}
@@ -269,22 +192,12 @@ export const InteractiveMenu: React.FC<InteractiveMenuProps> = ({ searchInputRef
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer flex items-center gap-1.5 ${
+                className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer flex items-center gap-1.5 ${
                   activeCategory === cat.id
                     ? 'bg-[#184E37] text-[#F4EFE6]'
                     : 'bg-white text-[#524B45] border border-[#E2DACD] hover:border-[#184E37]'
                 }`}
               >
-                {CATEGORY_COVERS[cat.id] && (
-                  <div className="w-4 h-4 rounded overflow-hidden shrink-0">
-                    <img
-                      src={CATEGORY_COVERS[cat.id]}
-                      alt=""
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
                 <span>{cat.nameAr}</span>
                 <span className="text-[10px] opacity-75 font-mono">
                   ({cat.count})
@@ -313,14 +226,13 @@ export const InteractiveMenu: React.FC<InteractiveMenuProps> = ({ searchInputRef
                 key={item.id}
                 className="bg-[#FCFAF7] border border-[#E2DACD] hover:border-[#184E37] rounded-lg p-3.5 transition-colors flex items-center justify-between text-right gap-3"
               >
-                {/* Optional square thumbnail only for items that have an image */}
-                {item.image && (
+                {/* Real verified photo thumbnail only when available */}
+                {item.image && !item.image.includes('signature-') && (
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden shrink-0 border border-[#E2DACD]">
                     <Img
                       src={item.image}
                       alt={item.nameAr}
                       className="w-full h-full object-cover"
-                      showDevLabel={false}
                     />
                   </div>
                 )}

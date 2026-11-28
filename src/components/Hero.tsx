@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { siteConfig } from '../config/site';
 import { ArrowLeft, MapPin } from 'lucide-react';
 
@@ -8,19 +8,22 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onViewLocation }) => {
+  const [imgSrc, setImgSrc] = useState('/images/fb/cover.jpg');
+
   return (
     <section className="relative min-h-[460px] sm:min-h-[520px] flex items-center bg-[#0D261C] text-[#F4EFE6] border-b border-[#1C4031] overflow-hidden pt-24 sm:pt-32 pb-14 sm:pb-20">
-      {/* Full-bleed background photo: right side on desktop in RTL, top on mobile */}
+      {/* Full-bleed background photo: best exterior photo from fb/ with fallback to facade */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-full lg:w-3/5 h-72 sm:h-96 lg:h-full">
           <picture>
-            <source srcSet="/images/tree-house-facade.webp" type="image/webp" />
+            <source srcSet="/images/fb/cover.webp" type="image/webp" />
             <img
-              src="/images/tree-house-facade.jpg"
+              src={imgSrc}
               alt="واجهة كافيه Tree House في البدرشين"
               className="w-full h-full object-cover object-center"
               loading="eager"
               decoding="async"
+              onError={() => setImgSrc('/images/tree-house-facade.jpg')}
             />
           </picture>
           {/* Dark green gradient overlay (#0D261C ~60%) keeping text crystal clear */}
@@ -32,9 +35,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onViewLocation }) => 
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-xl text-right">
-          <span className="font-brand-latin text-2xl sm:text-3xl font-bold text-[#D49B4B] mb-2 block">
-            Tree House Cafe
-          </span>
+          <div className="flex items-center gap-2.5 mb-2 flex-wrap">
+            <span className="font-brand-latin text-2xl sm:text-3xl font-bold text-[#D49B4B]">
+              Tree House Cafe
+            </span>
+            <span className="text-[11px] font-semibold tracking-wider text-[#A3B8AE] border border-[#2B664B] px-2 py-0.5 rounded">
+              COFFEE & FRIENDS
+            </span>
+          </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4EFE6] leading-tight mb-4 tracking-tight drop-shadow-sm">
             قهوة وقعدة على الطريق

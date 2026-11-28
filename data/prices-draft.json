@@ -1,0 +1,6 @@
+{
+  "source": "data/menu-board.jpg (Tree House Cafe Official Menu Board)",
+  "status": "All price lines on the physical menu board are left blank ('السعر بالكافيه'). No verified prices published in the public page header or menu board.",
+  "prices": {},
+  "note": "Do not apply unverified or guessed prices to menu items. When the cafe owner provides the price list, populate the mapping here with item id -> price (e.g., 'c-01': 35)."
+}

@@ -1,0 +1,59 @@
+{
+  "pageName": "Tree House Cafe",
+  "category": "مقهى",
+  "bio": "Where every cup feels like home 🌿☕",
+  "tagline": "COFFEE & FRIENDS",
+  "address": "الجيزة - البدرشين الطريق السريع بجوار فيلا شريف عناني",
+  "mapLocation": {
+    "lat": null,
+    "lng": null,
+    "googleMapsUrl": "https://maps.google.com/?q=Tree+House+Cafe+البدرشين"
+  },
+  "phone": null,
+  "whatsapp": null,
+  "email": null,
+  "website": null,
+  "openingHours": null,
+  "priceRange": null,
+  "instagram": "https://www.instagram.com/tree_house_caffe/",
+  "otherLinks": [
+    "https://www.facebook.com/profile.php?id=61591876180504&locale=ar_AR"
+  ],
+  "followers": "2.5 ألف",
+  "ownPosts": [],
+  "offersOrEvents": [],
+  "reviews": {
+    "rating": null,
+    "count": null,
+    "recommendationPercent": null
+  },
+  "pricesFoundInPosts": [],
+  "photosToUse": [
+    {
+      "url": "/images/fb/cover.jpg",
+      "description": "صورة الغلاف الرسمية: لقطة ليلية عريضة لواجهة الكافيه واللافتات المضيئة ومدخل المكان وشعار COFFEE & FRIENDS",
+      "kind": "cover",
+      "bestUse": "خلفية الهيرو (Hero Section) أو قسم المكان"
+    },
+    {
+      "url": "/images/fb/exterior-night.jpg",
+      "description": "صورة الحساب الشخصي (Avatar): حروف Tree House المضيئة ثلاثية الأبعاد على الواجهة الصاج الخضراء",
+      "kind": "exterior",
+      "bestUse": "قسم المكان (Place Collage) والمعرض"
+    },
+    {
+      "url": "/images/tree-house-logo.png",
+      "description": "لوجو تري هاوس الدائري الرسمي مع رسم بيت الشجرة",
+      "kind": "logo",
+      "bestUse": "الهيدر والفوتر والأيقونة المفضلة (Favicon)"
+    }
+  ],
+  "notes": {
+    "phone": "missing, ask owner",
+    "whatsapp": "missing, ask owner",
+    "email": "missing, ask owner",
+    "website": "missing, ask owner",
+    "openingHours": "missing, ask owner (previously defaulted to 8:00 AM - 2:00 AM)",
+    "prices": "missing, ask owner (the physical menu board leaves price lines blank for in-cafe pricing)"
+  }
+}
