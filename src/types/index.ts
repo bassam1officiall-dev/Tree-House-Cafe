@@ -25,6 +25,7 @@ export interface MenuItem {
   descriptionEn: string;
   category: CategoryId;
   price: number | null; // null displays "السعر بالكافيه"
+  image?: string;
   isPopular?: boolean;
   isSpecialty?: boolean;
   temperature?: 'hot' | 'cold' | 'ambient';

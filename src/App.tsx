@@ -2,8 +2,10 @@ import React, { useRef } from 'react';
 import { OrderProvider, useOrder } from './context/OrderContext';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { PlaceCollage } from './components/PlaceCollage';
 import { VibesServices } from './components/VibesServices';
 import { InteractiveMenu } from './components/InteractiveMenu';
+import { Gallery } from './components/Gallery';
 import { LocationAndHours } from './components/LocationAndHours';
 import { Footer } from './components/Footer';
 import { OrderSummaryDrawer } from './components/OrderSummaryDrawer';
@@ -39,9 +41,15 @@ const MainContent: React.FC = () => {
           onViewLocation={handleViewLocation}
         />
 
+        {/* New Place Section (Collage) right after Hero */}
+        <PlaceCollage />
+
         <VibesServices />
 
         <InteractiveMenu searchInputRef={searchInputRef} />
+
+        {/* Photo Gallery strip before location */}
+        <Gallery />
 
         <LocationAndHours />
       </main>

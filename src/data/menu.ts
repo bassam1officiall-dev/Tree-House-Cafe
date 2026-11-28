@@ -82,6 +82,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'c-02',
+    image: '/images/signature-2.jpg',
     nameAr: 'قهوة تركي دبل',
     nameEn: 'Turkish Coffee Double',
     descriptionAr: 'شوت مضاعف من القهوة التركية الممتازة لعشاق التركيز والقهوة الثقيلة.',
@@ -347,6 +348,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'hb-08',
+    image: '/images/signature-8.jpg',
     nameAr: 'سحلب سادة بالحليب',
     nameEn: 'Sahlab Plain with Milk',
     descriptionAr: 'المشروب الشتوي الكثيف الغني بالمستكة والحليب الساخن برائحة كلاسيكية.',
@@ -407,6 +409,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ic-03',
+    image: '/images/signature-1.jpg',
     nameAr: 'آيس سبانيش لاتيه',
     nameEn: 'Iced Spanish Latte',
     descriptionAr: 'المشروب الأكثر طلباً: حليب مكثف محلى مع إسبريسو وحليب مثلج متناغم.',
@@ -420,6 +423,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ic-04',
+    image: '/images/signature-4.jpg',
     nameAr: 'آيس كاراميل لاتيه',
     nameEn: 'Iced Caramel Latte',
     descriptionAr: 'قهوة مثلجة ممزوجة بسيرب الكراميل الذهبي وصوص الكراميل اللذيذ.',
@@ -456,6 +460,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ================= 4. FRAPPE (3 Items) =================
   {
     id: 'fr-01',
+    image: '/images/signature-6.jpg',
     nameAr: 'موكا فرابيه مثلج',
     nameEn: 'Mocha Frappe',
     descriptionAr: 'مخفوق مثلج مدمج بين القهوة والشوكولاتة وصوص الفدج الغني.',
@@ -506,6 +511,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ms-02',
+    image: '/images/signature-3.jpg',
     nameAr: 'ميلك شيك لوتس',
     nameEn: 'Lotus Biscoff Milkshake',
     descriptionAr: 'بسكويت وزبدة لوتس سبيكولوس الأصلية بصوص الكراميل والقرفة الشهية.',
@@ -646,6 +652,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'fj-06',
+    image: '/images/signature-5.jpg',
     nameAr: 'سموذي مانجو مثلج',
     nameEn: 'Chilled Mango Smoothie',
     descriptionAr: 'سموذي كريمي مثلج من المانجو الطازجة والثلج المجروش بنكهة استوائية قوية.',
@@ -900,6 +907,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ds-02',
+    image: '/images/signature-7.jpg',
     nameAr: 'كوكيز برقائق الشوكولاتة',
     nameEn: 'Chocolate Chunk Cookies',
     descriptionAr: 'كوكيز زبدية مقرمشة من الأطراف وطرية من القلب ومحشوة بقطع الشوكولاتة البلجيكية.',
